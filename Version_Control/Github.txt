@@ -54,3 +54,27 @@ prepare the content staged for the next commit.
 
 Commit the changes since the previous commit
     git commit -m "message" #message = first commit
+
+create a github repo:
+    DevOps_Journey
+
+Link a local repo DevOps to DevOps_Journey:
+    origin = https://github.com/Shivale20/DevOps_Journey.git   #got it from <>code in repo.
+    git remote add origin https://github.com/Shivale20/DevOps_Journey.git
+    
+Generate a ssh key and save it in .ssh folder as id_rsa.pub. Copy the ssh key and add to my Github profile under SSH and GPG keys.
+    ssh-keygen -t rsa -b 4096 -C "manishshivale204@gmail.com"
+    #remember the passphrase.
+    
+Test our connection with github.com
+    ssh -T git@github.com
+    Enter passphrase for key '/Users/manishshivale/.ssh/id_rsa': 
+    Hi Shivale20! You've successfully authenticated, but GitHub does not provide shell access.
+
+Pushing from a local to a remote repo:
+    git push origin main
+    #look for errors and if needed go for git pull or git push with rebase to merge commits on top of each other.
+
+Merge conflicts
+    if making changes in local repo from previous commit in github-- first pull from origin main and then start working.
+    
