@@ -1,0 +1,21 @@
+What are profile scripts?
+    Before user gets the access to the shell, bash shell triggers a number
+    of profile scripts in the fixed order.
+
+    become super user to run check those script
+
+    -Global profile
+    cat /etc/profile
+        changes to this file will affect all users on the system.
+
+    -Bash profile
+    This file contains shell commands that configure the user's work environment.
+    PATH=$PATH:$HOME/bin
+
+    -Bash Logout
+    .bash_logout
+
+Check whether the file exists:
+    test -e /etc/skel/.bashrc
+
+    

@@ -1,0 +1,37 @@
+Define a variable and set it to permanent 
+1. How do you use available permanent ones:
+    go to /bin -> printenv
+    check all available variable such as PATH, USERNAME etc
+    call them like this:
+        - echo $PATH
+        - echo $USERNAME
+
+Before permanent - create local variable
+    VARIABLE = value
+    echo VARIABLE
+        value
+    
+Verify the existence of local variable - VARIABLE
+    set | grep VARIABLE
+        VARIABLE = value
+
+local variable is not environment variable yet
+    printenv | grep VARIABLE
+     -- no output
+
+Make the local variable - the environment variable
+    export VARIABLE
+
+local variable is environment variable now
+    printenv | grep VARIABLE
+        value
+
+change the environment variable to local variable
+    export -n VARIABLE
+
+2. How do you define variable as permanent for both login and no login shells
+
+    Define it in ./bashrc file- so whenever bash shell runs- this script fle executes. The file contains various configuration, comments and functions to customize the shell experience.
+
+3. View all environment variable
+    export -p
