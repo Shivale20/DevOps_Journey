@@ -1,0 +1,24 @@
+find the git version running in my system:
+    git --version
+    git version 2.37.1 (Apple Git-137.1)
+
+find the git configuration in my system:
+    git config --list
+
+Add my name and email as global user name and user email in the git configuration whenever any commit I will make will show its user and email
+    git config --global user.name "Manish Shivale"
+    git config --global user.email "manishshivale204@gmail.com"
+    git config --list
+
+    user.name=Manish Shivale
+    user.email=manishshivale204@gmail.com
+
+Get the user name associated with the commit
+    git config user.name
+    Manish Shivale
+
+---->creating a local repo:
+
+To change this directory manishshivale@CA-F5KML11EF693 DevOps % into local repo:
+    git init
+    Initialized empty Git repository in /Users/manishshivale/Desktop/DevOps/.git/
