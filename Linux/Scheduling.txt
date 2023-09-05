@@ -1,0 +1,77 @@
+I want to run certain commands " at time "
+
+    sudo apt install at
+
+    They use allow and deny files
+
+    check at.deny in /etc --if it is empty- means everybody is allow to use at.
+
+    we cannot create recuring tasks with at command. 
+
+I want to do certain tasks perodically. 
+
+    cron command
+
+    check /etc and you will find many directories that are using cron
+        cron.d
+        cron.daily
+        cron.hourly
+        cron.monthly
+        cron.weekly
+
+    say - I want to see what is cron.daily
+        anacron apport logrotate  --- these are service and bash script
+
+If I want to run at specific time perodically
+
+    check /etc/crontab
+
+    sudo cat crontab
+
+    SHELL=/bin/bash
+    PATH=/sbin:..
+    MAILTO=root
+
+    * * * * * user-name command_to_be_executed
+    minute hour day_of_month month day_of_week user-name command_to_be_executed
+
+    Certainly! Crontab is a powerful tool that can be used in various scenarios by system administrators and DevOps professionals to automate tasks and manage systems efficiently. Here are a few scenarios where crontab can be valuable:
+
+1. **Backup and Data Management:**
+   Schedule regular backups of critical data or databases using crontab. This ensures data integrity and disaster recovery. You can create cron jobs to backup databases, files, and directories to remote locations or storage devices.
+
+2. **Log Rotation:**
+   Automate the rotation and management of log files. Schedule cron jobs to compress, move, or delete old log files to prevent disk space issues and maintain a clean system.
+
+3. **Automated Testing:**
+   For DevOps purposes, you can use crontab to schedule automated testing tasks, such as running unit tests, integration tests, and performance tests at specific intervals.
+
+4. **Scheduled Maintenance:**
+   Set up cron jobs to perform routine system maintenance tasks, such as package updates, system upgrades, and security patches installation during off-peak hours.
+
+5. **Data Import/Export:**
+   Automate data import or export processes between systems or databases. For example, you can schedule cron jobs to synchronize data between different databases or systems.
+
+6. **Monitoring and Health Checks:**
+   Schedule cron jobs to perform health checks and monitoring of system resources, services, and applications. You can alert administrators when thresholds are exceeded.
+
+7. **Log Analysis and Reporting:**
+   Use cron jobs to analyze logs and generate reports. For instance, you can create a cron job to parse access logs and generate a daily report of website traffic.
+
+8. **Automation of Routine Tasks:**
+   Automate routine tasks like cleaning temporary files, managing user accounts, and performing repetitive administrative actions.
+
+9. **Security Measures:**
+   Schedule cron jobs to update antivirus definitions, perform security scans, and enforce security policies on a regular basis.
+
+10. **Resource Optimization:**
+    Schedule resource optimization tasks, such as defragmenting hard drives, optimizing databases, and cleaning up disk space.
+
+11. **Environment Setup:**
+    For software development and testing environments, you can schedule the provisioning of required resources, databases, and services using cron jobs.
+
+These are just a few examples of how crontab can be used to automate various tasks in both system administration and DevOps practices. It allows you to save time, reduce manual errors, and maintain a more efficient and reliable system.
+
+if system shut down and cron job is scheduled to run- then it will not run the job until the system is not running.
+
+then you need command -- anacron  -- this will run missed task as system is up.
